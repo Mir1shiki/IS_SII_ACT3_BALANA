@@ -30,13 +30,13 @@
         {
             label1 = new Label();
             panel1 = new Panel();
-            label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label3 = new Label();
-            label4 = new Label();
+            signupRed = new Button();
             button1 = new Button();
-            button2 = new Button();
+            label4 = new Label();
+            label3 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(signupRed);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
@@ -67,6 +67,59 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(346, 214);
             panel1.TabIndex = 1;
+            // 
+            // signupRed
+            // 
+            signupRed.Location = new Point(202, 152);
+            signupRed.Name = "signupRed";
+            signupRed.Size = new Size(75, 23);
+            signupRed.TabIndex = 6;
+            signupRed.Text = "signup";
+            signupRed.UseVisualStyleBackColor = true;
+            signupRed.Click += signupRed_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(121, 152);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 5;
+            button1.Text = "login";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(41, 116);
+            label4.Name = "label4";
+            label4.Size = new Size(71, 19);
+            label4.TabIndex = 4;
+            label4.Text = "password";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(41, 68);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 19);
+            label3.TabIndex = 3;
+            label3.Text = "username";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(121, 112);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(185, 23);
+            textBox2.TabIndex = 2;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(121, 68);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(185, 23);
+            textBox1.TabIndex = 1;
             // 
             // label2
             // 
@@ -79,58 +132,6 @@
             label2.Text = "login";
             label2.Click += label2_Click;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(121, 68);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 23);
-            textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(121, 112);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 23);
-            textBox2.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(41, 68);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 19);
-            label3.TabIndex = 3;
-            label3.Text = "username";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(41, 116);
-            label4.Name = "label4";
-            label4.Size = new Size(71, 19);
-            label4.TabIndex = 4;
-            label4.Text = "password";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(121, 152);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "login";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(202, 152);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "signup";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -141,6 +142,7 @@
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
+            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -157,7 +159,7 @@
         private Label label3;
         private TextBox textBox2;
         private TextBox textBox1;
-        private Button button2;
+        private Button signupRed;
         private Button button1;
     }
 }

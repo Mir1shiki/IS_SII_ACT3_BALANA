@@ -30,15 +30,15 @@
         {
             label1 = new Label();
             panel1 = new Panel();
+            label5 = new Label();
+            textBox3 = new TextBox();
             button2 = new Button();
-            button1 = new Button();
             label4 = new Label();
+            loginRed = new Button();
             label3 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label2 = new Label();
-            label5 = new Label();
-            textBox3 = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(loginRed);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
@@ -70,6 +70,23 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(395, 258);
             panel1.TabIndex = 3;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(16, 163);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 19);
+            label5.TabIndex = 8;
+            label5.Text = "confirm password";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(170, 159);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(185, 23);
+            textBox3.TabIndex = 7;
             // 
             // button2
             // 
@@ -80,15 +97,6 @@
             button2.Text = "signup";
             button2.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            button1.Location = new Point(124, 198);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "login";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -98,6 +106,16 @@
             label4.Size = new Size(71, 19);
             label4.TabIndex = 4;
             label4.Text = "password";
+            // 
+            // loginRed
+            // 
+            loginRed.Location = new Point(124, 198);
+            loginRed.Name = "loginRed";
+            loginRed.Size = new Size(75, 23);
+            loginRed.TabIndex = 5;
+            loginRed.Text = "login";
+            loginRed.UseVisualStyleBackColor = true;
+            loginRed.Click += loginRed_Click;
             // 
             // label3
             // 
@@ -134,23 +152,6 @@
             label2.TabIndex = 0;
             label2.Text = "signup";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Calibri", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(16, 163);
-            label5.Name = "label5";
-            label5.Size = new Size(123, 19);
-            label5.TabIndex = 8;
-            label5.Text = "confirm password";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(170, 159);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(185, 23);
-            textBox3.TabIndex = 7;
-            // 
             // signup
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -160,6 +161,7 @@
             Controls.Add(panel1);
             Name = "signup";
             Text = "signup";
+            FormClosing += signup_FormClosing;
             Load += signup_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -172,7 +174,7 @@
         private Label label1;
         private Panel panel1;
         private Button button2;
-        private Button button1;
+        private Button loginRed;
         private Label label4;
         private Label label3;
         private TextBox textBox2;

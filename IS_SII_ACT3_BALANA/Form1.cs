@@ -21,5 +21,19 @@ namespace IS_SII_ACT3_BALANA
         {
 
         }
+
+        private void signupRed_Click(object sender, EventArgs e)
+        {
+            signup Signupage = new signup();
+
+            Signupage.Show();
+
+            this.Hide();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

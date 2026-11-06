@@ -16,5 +16,10 @@ namespace IS_SII_ACT3_BALANA
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

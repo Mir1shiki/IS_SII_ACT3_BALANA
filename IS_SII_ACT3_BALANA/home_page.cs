@@ -14,5 +14,10 @@ namespace IS_SII_ACT3_BALANA
         {
             InitializeComponent();
         }
+
+        private void home_page_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

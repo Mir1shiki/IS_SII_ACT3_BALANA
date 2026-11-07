@@ -40,14 +40,15 @@
             label1.TabIndex = 0;
             label1.Text = "hello, world";
             // 
-            // homepage
+            // home_page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label1);
-            Name = "homepage";
+            Name = "home_page";
             Text = "homepage";
+            FormClosing += home_page_FormClosing;
             ResumeLayout(false);
             PerformLayout();
         }

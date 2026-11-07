@@ -31,11 +31,11 @@
             label1 = new Label();
             panel1 = new Panel();
             signupRed = new Button();
-            button1 = new Button();
+            loginButt = new Button();
             label4 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            pasTxt = new TextBox();
+            unTxt = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -57,11 +57,11 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(signupRed);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(loginButt);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(pasTxt);
+            panel1.Controls.Add(unTxt);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(167, 74);
             panel1.Name = "panel1";
@@ -78,14 +78,15 @@
             signupRed.UseVisualStyleBackColor = true;
             signupRed.Click += signupRed_Click;
             // 
-            // button1
+            // loginButt
             // 
-            button1.Location = new Point(121, 152);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "login";
-            button1.UseVisualStyleBackColor = true;
+            loginButt.Location = new Point(121, 152);
+            loginButt.Name = "loginButt";
+            loginButt.Size = new Size(75, 23);
+            loginButt.TabIndex = 5;
+            loginButt.Text = "login";
+            loginButt.UseVisualStyleBackColor = true;
+            loginButt.Click += loginButt_Click;
             // 
             // label4
             // 
@@ -107,19 +108,20 @@
             label3.TabIndex = 3;
             label3.Text = "username";
             // 
-            // textBox2
+            // pasTxt
             // 
-            textBox2.Location = new Point(121, 112);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 23);
-            textBox2.TabIndex = 2;
+            pasTxt.Location = new Point(121, 112);
+            pasTxt.Name = "pasTxt";
+            pasTxt.Size = new Size(185, 23);
+            pasTxt.TabIndex = 2;
+            pasTxt.UseSystemPasswordChar = true;
             // 
-            // textBox1
+            // unTxt
             // 
-            textBox1.Location = new Point(121, 68);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 23);
-            textBox1.TabIndex = 1;
+            unTxt.Location = new Point(121, 68);
+            unTxt.Name = "unTxt";
+            unTxt.Size = new Size(185, 23);
+            unTxt.TabIndex = 1;
             // 
             // label2
             // 
@@ -157,9 +159,9 @@
         private Label label2;
         private Label label4;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox pasTxt;
+        private TextBox unTxt;
         private Button signupRed;
-        private Button button1;
+        private Button loginButt;
     }
 }

@@ -42,7 +42,7 @@ namespace IS_SII_ACT3_BALANA
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string add_uname = uname.Text;
+            string add_uname = uname.Text.Trim();
 
             string add_pass = passTxt.Text;
 
@@ -69,6 +69,23 @@ namespace IS_SII_ACT3_BALANA
                 using (OleDbConnection conn = Connection.GetConnection())
                 {
                     conn.Open();
+
+                    string checkQ = "SELECT COUNT(*) FROM users WHERE username = ?";
+
+                    using (OleDbCommand cmd = new OleDbCommand(checkQ, conn))
+                    {
+                        cmd.Parameters.Add("?", OleDbType.VarChar).Value = add_uname;
+
+                        int result = (int)cmd.ExecuteScalar();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show("Username already exist!", "Error",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            return;
+                        }
+                    }
 
                     string query = "INSERT INTO users (username, passwordHash) VALUES(?,?)";
 

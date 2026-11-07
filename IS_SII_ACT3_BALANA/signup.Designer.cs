@@ -31,13 +31,13 @@
             label1 = new Label();
             panel1 = new Panel();
             label5 = new Label();
-            textBox3 = new TextBox();
+            conPass = new TextBox();
             button2 = new Button();
             label4 = new Label();
             loginRed = new Button();
             label3 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            passTxt = new TextBox();
+            uname = new TextBox();
             label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -58,13 +58,13 @@
             // 
             panel1.BackColor = Color.White;
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(conPass);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(loginRed);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(passTxt);
+            panel1.Controls.Add(uname);
             panel1.Controls.Add(label2);
             panel1.Location = new Point(141, 66);
             panel1.Name = "panel1";
@@ -81,21 +81,23 @@
             label5.TabIndex = 8;
             label5.Text = "confirm password";
             // 
-            // textBox3
+            // conPass
             // 
-            textBox3.Location = new Point(170, 159);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(185, 23);
-            textBox3.TabIndex = 7;
+            conPass.Location = new Point(170, 159);
+            conPass.Name = "conPass";
+            conPass.Size = new Size(185, 23);
+            conPass.TabIndex = 7;
+            conPass.UseSystemPasswordChar = true;
             // 
             // button2
             // 
-            button2.Location = new Point(205, 198);
+            button2.Location = new Point(170, 198);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 6;
             button2.Text = "signup";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label4
             // 
@@ -109,7 +111,7 @@
             // 
             // loginRed
             // 
-            loginRed.Location = new Point(124, 198);
+            loginRed.Location = new Point(280, 198);
             loginRed.Name = "loginRed";
             loginRed.Size = new Size(75, 23);
             loginRed.TabIndex = 5;
@@ -127,20 +129,21 @@
             label3.TabIndex = 3;
             label3.Text = "username";
             // 
-            // textBox2
+            // passTxt
             // 
-            textBox2.Location = new Point(170, 112);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 23);
-            textBox2.TabIndex = 2;
-            textBox2.TextChanged += textBox2_TextChanged;
+            passTxt.Location = new Point(170, 112);
+            passTxt.Name = "passTxt";
+            passTxt.Size = new Size(185, 23);
+            passTxt.TabIndex = 2;
+            passTxt.UseSystemPasswordChar = true;
+            passTxt.TextChanged += textBox2_TextChanged;
             // 
-            // textBox1
+            // uname
             // 
-            textBox1.Location = new Point(170, 68);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 23);
-            textBox1.TabIndex = 1;
+            uname.Location = new Point(170, 68);
+            uname.Name = "uname";
+            uname.Size = new Size(185, 23);
+            uname.TabIndex = 1;
             // 
             // label2
             // 
@@ -177,10 +180,10 @@
         private Button loginRed;
         private Label label4;
         private Label label3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox passTxt;
+        private TextBox uname;
         private Label label2;
         private Label label5;
-        private TextBox textBox3;
+        private TextBox conPass;
     }
 }

@@ -42,6 +42,8 @@ namespace IS_SII_ACT3_BALANA
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Form1 redir = new Form1();
+
             string add_uname = uname.Text.Trim();
 
             string add_pass = passTxt.Text;
@@ -102,6 +104,10 @@ namespace IS_SII_ACT3_BALANA
                         uname.Clear();
                         passTxt.Clear();
                         conPass.Clear();
+
+                        redir.Show();
+
+                        this.Hide();
                     }
                 }
             }

@@ -163,6 +163,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "signup";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "signup";
             FormClosing += signup_FormClosing;
             Load += signup_Load;

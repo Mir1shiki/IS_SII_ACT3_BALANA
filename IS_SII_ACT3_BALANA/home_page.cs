@@ -19,5 +19,12 @@ namespace IS_SII_ACT3_BALANA
         {
             Application.Exit();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            add_item addRedirect = new add_item();
+
+            addRedirect.Show();
+        }
     }
 }

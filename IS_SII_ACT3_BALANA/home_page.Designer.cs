@@ -34,19 +34,13 @@
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            button5 = new Button();
-            button6 = new Button();
+            deleteButton = new Button();
+            refreshh = new Button();
             textBox1 = new TextBox();
             button7 = new Button();
-            dataGridView1 = new DataGridView();
-            productId = new DataGridViewTextBoxColumn();
-            productName = new DataGridViewTextBoxColumn();
-            category = new DataGridViewTextBoxColumn();
-            quantity = new DataGridViewTextBoxColumn();
-            unitPrice = new DataGridViewTextBoxColumn();
-            status = new DataGridViewTextBoxColumn();
+            disProd = new DataGridView();
             flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)disProd).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -68,8 +62,8 @@
             flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(button5);
-            flowLayoutPanel1.Controls.Add(button6);
+            flowLayoutPanel1.Controls.Add(deleteButton);
+            flowLayoutPanel1.Controls.Add(refreshh);
             flowLayoutPanel1.Controls.Add(textBox1);
             flowLayoutPanel1.Controls.Add(button7);
             flowLayoutPanel1.Location = new Point(-1, 35);
@@ -112,26 +106,29 @@
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 5;
-            button4.Text = "Update";
+            button4.Text = "Edit";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
-            // button5
+            // deleteButton
             // 
-            button5.Location = new Point(327, 3);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 6;
-            button5.Text = "Delete";
-            button5.UseVisualStyleBackColor = true;
+            deleteButton.Location = new Point(327, 3);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(75, 23);
+            deleteButton.TabIndex = 6;
+            deleteButton.Text = "Delete";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
             // 
-            // button6
+            // refreshh
             // 
-            button6.Location = new Point(408, 3);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 7;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            refreshh.Location = new Point(408, 3);
+            refreshh.Name = "refreshh";
+            refreshh.Size = new Size(75, 23);
+            refreshh.TabIndex = 7;
+            refreshh.Text = "Refresh";
+            refreshh.UseVisualStyleBackColor = true;
+            refreshh.Click += refreshh_Click;
             // 
             // textBox1
             // 
@@ -149,44 +146,18 @@
             button7.Text = "Search";
             button7.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // disProd
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { productId, productName, category, quantity, unitPrice, status });
-            dataGridView1.Location = new Point(83, 83);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(641, 407);
-            dataGridView1.TabIndex = 2;
-            // 
-            // productId
-            // 
-            productId.HeaderText = "ID";
-            productId.Name = "productId";
-            // 
-            // productName
-            // 
-            productName.HeaderText = "Product Name";
-            productName.Name = "productName";
-            // 
-            // category
-            // 
-            category.HeaderText = "Category";
-            category.Name = "category";
-            // 
-            // quantity
-            // 
-            quantity.HeaderText = "Quantity";
-            quantity.Name = "quantity";
-            // 
-            // unitPrice
-            // 
-            unitPrice.HeaderText = "Unit Price";
-            unitPrice.Name = "unitPrice";
-            // 
-            // status
-            // 
-            status.HeaderText = "Status";
-            status.Name = "status";
+            disProd.AllowUserToAddRows = false;
+            disProd.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            disProd.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            disProd.Location = new Point(83, 83);
+            disProd.MultiSelect = false;
+            disProd.Name = "disProd";
+            disProd.ReadOnly = true;
+            disProd.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            disProd.Size = new Size(641, 407);
+            disProd.TabIndex = 2;
             // 
             // home_page
             // 
@@ -194,16 +165,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(813, 511);
-            Controls.Add(dataGridView1);
+            Controls.Add(disProd);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(label1);
             Name = "home_page";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "homepage";
             FormClosing += home_page_FormClosing;
+            Load += home_page_Load;
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)disProd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -216,16 +188,10 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Button button5;
-        private Button button6;
+        private Button deleteButton;
+        private Button refreshh;
         private TextBox textBox1;
         private Button button7;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn productId;
-        private DataGridViewTextBoxColumn productName;
-        private DataGridViewTextBoxColumn category;
-        private DataGridViewTextBoxColumn quantity;
-        private DataGridViewTextBoxColumn unitPrice;
-        private DataGridViewTextBoxColumn status;
+        private DataGridView disProd;
     }
 }

@@ -64,6 +64,8 @@ namespace IS_SII_ACT3_BALANA
                         quantityAdd.Value = 0;
                         addUp.Value = 0;
                         reorLvl.Value = 0;
+
+                        this.Hide();
                     }
                 }
             }

@@ -30,14 +30,13 @@
         {
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             deleteButton = new Button();
             refreshh = new Button();
-            textBox1 = new TextBox();
+            searchTxt = new TextBox();
             button7 = new Button();
+            button1 = new Button();
             disProd = new DataGridView();
             flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)disProd).BeginInit();
@@ -58,41 +57,22 @@
             flowLayoutPanel1.Anchor = AnchorStyles.None;
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.BackColor = Color.LightCyan;
-            flowLayoutPanel1.Controls.Add(button1);
-            flowLayoutPanel1.Controls.Add(button2);
             flowLayoutPanel1.Controls.Add(button3);
             flowLayoutPanel1.Controls.Add(button4);
             flowLayoutPanel1.Controls.Add(deleteButton);
             flowLayoutPanel1.Controls.Add(refreshh);
-            flowLayoutPanel1.Controls.Add(textBox1);
+            flowLayoutPanel1.Controls.Add(searchTxt);
             flowLayoutPanel1.Controls.Add(button7);
+            flowLayoutPanel1.Controls.Add(button1);
             flowLayoutPanel1.Location = new Point(-1, 35);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(820, 29);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
-            // button1
-            // 
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "In";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(84, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Out";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
-            button3.Location = new Point(165, 3);
+            button3.Location = new Point(3, 3);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 4;
@@ -102,7 +82,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(246, 3);
+            button4.Location = new Point(84, 3);
             button4.Name = "button4";
             button4.Size = new Size(75, 23);
             button4.TabIndex = 5;
@@ -112,7 +92,7 @@
             // 
             // deleteButton
             // 
-            deleteButton.Location = new Point(327, 3);
+            deleteButton.Location = new Point(165, 3);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(75, 23);
             deleteButton.TabIndex = 6;
@@ -122,7 +102,7 @@
             // 
             // refreshh
             // 
-            refreshh.Location = new Point(408, 3);
+            refreshh.Location = new Point(246, 3);
             refreshh.Name = "refreshh";
             refreshh.Size = new Size(75, 23);
             refreshh.TabIndex = 7;
@@ -130,21 +110,32 @@
             refreshh.UseVisualStyleBackColor = true;
             refreshh.Click += refreshh_Click;
             // 
-            // textBox1
+            // searchTxt
             // 
-            textBox1.Location = new Point(489, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(231, 23);
-            textBox1.TabIndex = 8;
+            searchTxt.Location = new Point(327, 3);
+            searchTxt.Name = "searchTxt";
+            searchTxt.Size = new Size(305, 23);
+            searchTxt.TabIndex = 8;
             // 
             // button7
             // 
-            button7.Location = new Point(726, 3);
+            button7.Location = new Point(638, 3);
             button7.Name = "button7";
             button7.Size = new Size(75, 23);
             button7.TabIndex = 3;
             button7.Text = "Search";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(719, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 9;
+            button1.Text = "Logout";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // disProd
             // 
@@ -184,14 +175,14 @@
 
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
-        private Button button1;
         private Button button2;
         private Button button3;
         private Button button4;
         private Button deleteButton;
         private Button refreshh;
-        private TextBox textBox1;
+        private TextBox searchTxt;
         private Button button7;
         private DataGridView disProd;
+        private Button button1;
     }
 }

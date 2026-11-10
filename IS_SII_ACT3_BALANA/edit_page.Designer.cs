@@ -70,13 +70,16 @@
             // edReor
             // 
             edReor.Location = new Point(123, 250);
+            edReor.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             edReor.Name = "edReor";
             edReor.Size = new Size(232, 23);
             edReor.TabIndex = 15;
             // 
             // editUp
             // 
+            editUp.DecimalPlaces = 2;
             editUp.Location = new Point(123, 204);
+            editUp.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             editUp.Name = "editUp";
             editUp.Size = new Size(232, 23);
             editUp.TabIndex = 14;
@@ -84,6 +87,7 @@
             // edQty
             // 
             edQty.Location = new Point(123, 160);
+            edQty.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             edQty.Name = "edQty";
             edQty.Size = new Size(232, 23);
             edQty.TabIndex = 13;

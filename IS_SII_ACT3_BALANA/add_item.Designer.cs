@@ -70,13 +70,16 @@
             // reorLvl
             // 
             reorLvl.Location = new Point(123, 250);
+            reorLvl.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             reorLvl.Name = "reorLvl";
             reorLvl.Size = new Size(232, 23);
             reorLvl.TabIndex = 15;
             // 
             // addUp
             // 
+            addUp.DecimalPlaces = 2;
             addUp.Location = new Point(123, 204);
+            addUp.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             addUp.Name = "addUp";
             addUp.Size = new Size(232, 23);
             addUp.TabIndex = 14;
@@ -84,6 +87,7 @@
             // quantityAdd
             // 
             quantityAdd.Location = new Point(123, 160);
+            quantityAdd.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             quantityAdd.Name = "quantityAdd";
             quantityAdd.Size = new Size(232, 23);
             quantityAdd.TabIndex = 13;

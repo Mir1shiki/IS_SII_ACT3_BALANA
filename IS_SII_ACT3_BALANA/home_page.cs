@@ -76,7 +76,7 @@ namespace IS_SII_ACT3_BALANA
                         disProd.Columns["product_name"]?.HeaderText = "Product Name";
                         disProd.Columns["category"]?.HeaderText = "Category";
                         disProd.Columns["quantity"]?.HeaderText = "Stock Quantity";
-                        disProd.Columns["unit_price"]?.HeaderText = "Unit Price";
+                        disProd.Columns["unit_price"]?.HeaderText = "Unit Price (₱)";
                         disProd.Columns["reorder_level"]?.HeaderText = "Reorder Level";
 
                     }
@@ -133,7 +133,7 @@ namespace IS_SII_ACT3_BALANA
 
             DialogResult confirm = MessageBox.Show(
                 "Are you sure you want to delete this item?",
-                "Confirm Delete", MessageBoxButtons.YesNo, 
+                "Confirm Delete", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (confirm != DialogResult.Yes)
@@ -149,7 +149,7 @@ namespace IS_SII_ACT3_BALANA
 
                     string query = "DELETE FROM products WHERE product_id = ?";
 
-                    using(OleDbCommand cmd = new OleDbCommand(query, conn))
+                    using (OleDbCommand cmd = new OleDbCommand(query, conn))
                     {
                         cmd.Parameters.Add("?", OleDbType.Integer).Value = productId;
 
@@ -175,7 +175,98 @@ namespace IS_SII_ACT3_BALANA
             {
                 MessageBox.Show("Error loading products: " + ex.Message);
             }
-            
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string search_text = searchTxt.Text;
+
+            if (string.IsNullOrWhiteSpace(search_text))
+            {
+                MessageBox.Show("Please enter a search term first! ", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                return;
+            }
+
+            try
+            {
+                using (OleDbConnection conn = Connection.GetConnection())
+                {
+                    conn.Open();
+
+                    string query = "SELECT * FROM products WHERE product_name LIKE ?";
+
+                    using (OleDbDataAdapter adapter = new OleDbDataAdapter())
+                    {
+                        adapter.SelectCommand = new OleDbCommand(query, conn);
+
+                        adapter.SelectCommand.Parameters.AddWithValue("@product_name", "%" + search_text + "%");
+
+                        DataTable dt = new DataTable();
+
+                        adapter.Fill(dt);
+
+                        dt.Columns.Add("Status", typeof(string));
+
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            int quantity = Convert.ToInt32(dr["quantity"]);
+                            int reordLvl = Convert.ToInt32(dr["reorder_level"]);
+
+                            if (quantity == 0)
+                            {
+                                dr["status"] = "Out of Stock";
+                            }
+                            else if (quantity <= reordLvl)
+                            {
+                                dr["status"] = "Low Stock";
+                            }
+                            else
+                            {
+                                dr["status"] = "In Stock";
+                            }
+                        }
+
+                        disProd.DataSource = null;
+                        disProd.Columns.Clear();
+                        disProd.AutoGenerateColumns = true;
+                        disProd.DataSource = dt;
+
+                        disProd.Columns["product_id"]?.HeaderText = "Id";
+                        disProd.Columns["product_name"]?.HeaderText = "Product Name";
+                        disProd.Columns["category"]?.HeaderText = "Category";
+                        disProd.Columns["quantity"]?.HeaderText = "Stock Quantity";
+                        disProd.Columns["unit_price"]?.HeaderText = "Unit Price";
+                        disProd.Columns["reorder_level"]?.HeaderText = "Reorder Level";
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading products: " + ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 login_page = new Form1();
+
+            DialogResult confirm = MessageBox.Show(
+                "Are you sure you want to logout?",
+                "Confirm Logout", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirm != DialogResult.Yes)
+            {
+                return;
+            }
+
+            login_page.Show();
+
+            this.Hide();
         }
     }
 }
